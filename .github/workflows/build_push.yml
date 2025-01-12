@@ -47,6 +47,8 @@ jobs:
       - name: Get last successful CI commit
         id: last_successful_ci_commit
         uses: nrwl/nx-set-shas@e2e6dc8bce4b0387a05eb687735c39c41580b792 # v4.1.2
+        with:
+          main-branch-name: ${{ github.ref_name }}
 
       - id: generate-matrices
         name: Create output matrices
@@ -141,7 +143,7 @@ jobs:
       - name: Merge repo
         run: |
           cd repo
-          python ../${{ github.ref_name }}/.github/scripts/merge-repo.py '${{ needs.prepare.outputs.delete }}'
+          python ../${{ github.ref_name }}/.github/scripts/merge-repo.py '${{ needs.prepare.outputs.delete }}' '${{ github.ref_name }}/repo'
 
       - name: Import GPG key
         id: import-gpg
