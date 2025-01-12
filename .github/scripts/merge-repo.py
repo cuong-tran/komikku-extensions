@@ -5,7 +5,7 @@ from pathlib import Path
 import shutil
 
 REMOTE_REPO: Path = Path.cwd()
-LOCAL_REPO: Path = REMOTE_REPO.parent.joinpath("main/repo")
+LOCAL_REPO: Path = REMOTE_REPO.parent.joinpath(sys.argv[2])
 
 to_delete: list[str] = json.loads(sys.argv[1])
 
