@@ -95,22 +95,22 @@ jobs:
 
           echo "Last commit: `git log -1 --oneline`"
 
-      - name: Merging master to merge-keiyoushi
-        run: |
-          cd master
-          git fetch origin merge-keiyoushi
-          git checkout merge-keiyoushi
-          echo "Last commit: `git log -1 --oneline`"
-          echo "Merging 'master' into merge-keiyoushi"
-          git merge --no-edit master
-          echo "Last commit: `git log -1 --oneline`"
+      # - name: Merging master to merge-keiyoushi
+      #   run: |
+      #     cd master
+      #     git fetch origin merge-keiyoushi
+      #     git checkout merge-keiyoushi
+      #     echo "Last commit: `git log -1 --oneline`"
+      #     echo "Merging 'master' into merge-keiyoushi"
+      #     git merge --no-edit master
+      #     echo "Last commit: `git log -1 --oneline`"
 
-      - name: Merging keiyoushi-upstream to merge-keiyoushi
-        run: |
-          cd master
-          echo "Merging 'keiyoushi-upstream/main' into merge-keiyoushi"
-          git merge -S --no-edit keiyoushi-upstream/main
-          echo "Last commit: `git log -1 --oneline`"
+      # - name: Merging keiyoushi-upstream to merge-keiyoushi
+      #   run: |
+      #     cd master
+      #     echo "Merging 'keiyoushi-upstream/main' into merge-keiyoushi"
+      #     git merge -S --no-edit keiyoushi-upstream/main
+      #     echo "Last commit: `git log -1 --oneline`"
 
       - name: Pushing to repo
         run: |
@@ -123,7 +123,7 @@ jobs:
           echo "Last commit: `git log -1 --oneline`"
           echo "Pushing 'keiyoushi' to repo"
           git push
-          git checkout merge-keiyoushi
-          echo "Last commit: `git log -1 --oneline`"
-          echo "Pushing 'merge-keiyoushi' to repo"
-          git push
+          # git checkout merge-keiyoushi
+          # echo "Last commit: `git log -1 --oneline`"
+          # echo "Pushing 'merge-keiyoushi' to repo"
+          # git push
